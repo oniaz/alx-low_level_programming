@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * main - Entry point. prints if n is positive, negative, or equal to zero. 
+ * main - Entry point. prints if n is positive, negative, or equal to zero
  *
  * Return: 0 if successful.
  */
