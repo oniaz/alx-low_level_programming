@@ -1,6 +1,7 @@
 #include <stdio.h>
 /**
- * main - print the desired text.
+ * main - print the desired text
+ *
  * Return: 0 for success.
  */
 int main(void)
