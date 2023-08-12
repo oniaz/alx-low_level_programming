@@ -7,13 +7,11 @@
  */
 int main(void)
 {
-	char c;
 	int i;
 
 	for (i = 25; i >= 0; i--)
 	{
-		c = (char) (i + 97);
-		putchar(c);
+		putchar(i + 97);
 	}
 
 	putchar('\n');
