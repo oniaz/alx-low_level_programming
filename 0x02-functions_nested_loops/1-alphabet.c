@@ -1,24 +1,14 @@
 #include "main.h"
 /**
- * main - prints the alphabet in lowercase
- * but e & q
- *
- * Return: 0 if successful.
+ * print_alphabet - prints the alphabet in lowercase
  */
-int main(void)
+void print_alphabet(void)
 {
 	int i;
 
 	for (i = 0; i < 26; i++)
 	{
-		if (i != 4 && i != 16)
-		{
-			_putchar((char) (i + 97));
-		}
+		_putchar((char) (i + 97));
 	}
-
 	_putchar('\n');
-
-	return (0);
 }
-
