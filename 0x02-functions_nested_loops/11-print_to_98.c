@@ -3,6 +3,7 @@
 /**
  * print_to_98 - print natural numbers from n to 98,
  * separated by a comma, followed by a space, followed by a new line
+ *@n: input number
  */
 void print_to_98(int n)
 {
