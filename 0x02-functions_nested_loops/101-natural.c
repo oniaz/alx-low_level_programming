@@ -3,9 +3,8 @@
 /**
  * natural - prints the sum of all the multiples of 3 or 5
  * below 1024 (excluded) followed by a new line
- * Return: sum
  */
-int natural(void)
+void natural(void)
 {
 	int sum = 0;
 	int i;
@@ -24,9 +23,12 @@ int natural(void)
 		else
 			break;
 	}
+	for (i = 0; i < 1024; i += 15)
+	{
+		if (i + 15 < 1024)
+			sum -= i + 15;
+	}
 	printf("%d\n", sum);
-
-	return (sum);
 }
 /**
  * main - entry point
