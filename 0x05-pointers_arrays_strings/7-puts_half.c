@@ -6,7 +6,7 @@
  */
 void puts_half(char *str)
 {
-	char *ptr = s;
+	char *ptr = str;
 	int c = 0;
 	int i;
 	int mid;
@@ -28,6 +28,6 @@ void puts_half(char *str)
 
 	for (i = mid; i < c; i++)
 	{
-		 _putchar(s[i]);
+		_putchar(str[i]);
 	}
 }
