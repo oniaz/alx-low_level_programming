@@ -6,25 +6,24 @@
   */
 void rev_string(char *s)
 {
-	int c = 1;
+	char *ptr = s;
+	int c = 0;
 
-	while (*s != '\0')
+	while (*ptr != '\0')
 	{
 		c++;
-		s++;
+		ptr++;
 	}
 
-	char rev[c];
 	int i;
+	char swapper;
+	int mid = c / 2;
 
-	for (i = 0; i < c; i++)
+	for (i = 0; i < mid; i++)
 	{
-		rev[i] = *s;
-		s--;
-	}
-
-	for (i = 0; i < c; i++)
-	{
-		s[i] = rev[i];
+		swapper = s[i];
+		s[i] = s[c - 1];
+		s[c - 1] = swapper;
+		c--;
 	}
 }
