@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * *_strcat - concatenates two strings
  * @src: pointer to source string that will be appended to destination
