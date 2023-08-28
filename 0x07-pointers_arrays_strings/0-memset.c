@@ -5,7 +5,7 @@
  * @s: pointer to memory area
  * @b: const byter that wil fill the memory area
  * @n: number of bytes to be filled
- * Return: pointer to the string after rot13 encoding
+ * Return: pointer to memory area
  */
 char *_memset(char *s, char b, unsigned int n)
 {
