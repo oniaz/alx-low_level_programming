@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * *_memset- encodes a string using rot13
  * @s: pointer to memory area
