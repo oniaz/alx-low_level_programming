@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _strspn - searches a string for any of a set of bytes
+ * *_strpbrk - searches a string for any of a set of bytes
  * @s: pointer to the string
  * @accept: pointer to the set of chars to be located
  * Return: the first occurrence in the string s of any
