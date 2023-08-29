@@ -1,4 +1,5 @@
 #include "main.h"
+#define NULL ((void *)0)
 
 /**
  * *_strchr - encodes a string using rot13
