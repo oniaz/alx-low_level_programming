@@ -1,5 +1,4 @@
 #include "main.h"
-#define NULL ((void *)0)
 
 /**
  * *_strchr - encodes a string using rot13
@@ -13,11 +12,9 @@ char *_strchr(char *s, char c)
 	while (*s != '\0')
 	{
 		if (*s == c)
-			break;
+			return (s);
 		s++;
 	}
-	if (*s == '\0')
-		s = 0;
 
-	return (s);
+	return (0);
 }
