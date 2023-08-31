@@ -11,5 +11,8 @@ int _sqrt_recursion(int n);
 int meow(int n, int x);
 int is_prime_number(int n);
 int purrfkt(int n, int x);
+int _counter(char *s, int c);
+int _palindrome(char *s1, char *s2, char *mid);
+int is_palindrome(char *s);
 
 #endif
