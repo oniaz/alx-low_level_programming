@@ -8,7 +8,7 @@
  */
 char *_strdup(char *str)
 {
-	if (*str == '\0')
+	if (str == NULL)
 	{
 		return (0);
 	}
