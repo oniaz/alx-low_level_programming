@@ -53,16 +53,17 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 	if (s2 != NULL)
 	{
-		for (i = 0; i < n; i++)
+		for (i = 0; i < n && i < c2; i++)
 		{
-			if (s2[i] == '\0')
-				break;
 			nptr[c1 + i] = s2[i];
 
 		}
 	}
 
-	nptr[c1 + c2 + 1] = '\0';
+	if (n >= c2)
+		nptr[c1 + c2 + 1] = '\0';
+	else
+		nptr[c1 + n + 1] = '\0';
 
 	return (nptr);
 }
