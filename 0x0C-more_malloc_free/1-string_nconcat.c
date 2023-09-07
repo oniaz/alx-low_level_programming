@@ -2,28 +2,45 @@
 #include <stdlib.h>
 
 /**
- * *string_nconcat - concatenates two strings
- * @s1: pointer to the first string
- * @s2: pointer to the second string
- * @n: number of chars from s2 to be concatenated
- *
- * Return: pointer to the concatenated string, or null
- */
-char *string_nconcat(char *s1, char *s2, unsigned int n)
+* counter - counts string chars
+* @s: pointer to the string
+*
+* Return: char count of the string
+*/
+unsigned int counter(char *s)
 {
-	unsigned int c1 = 0, i = 0;
-	char *ptr1, *nptr;
+	unsigned int c = 0;
+	char *ptr;
 
-	if (s1 != NULL)
+	if (s != NULL)
 	{
-		ptr1 = s1;
-		while (*ptr1 != '\0')
+		ptr = s;
+		while (*ptr != '\0')
 		{
-			c1++;
-			ptr1++;
+			c++;
+			ptr++;
 		}
 	}
-	nptr = malloc(c1 + n + 1);
+
+	return (c);
+}
+
+/**
+* *string_nconcat - concatenates two strings
+* @s1: pointer to the first string
+* @s2: pointer to the second string
+* @n: number of chars from s2 to be concatenated
+*
+* Return: pointer to the concatenated string, or null
+*/
+char *string_nconcat(char *s1, char *s2, unsigned int n)
+{
+	unsigned int c1, c2, i = 0;
+	char *nptr;
+
+	c1 = counter(s1);
+	c2 = counter(s2);
+	nptr = malloc(c1 + c2 + 1);
 
 	if (nptr == 0)
 		return (NULL);
@@ -41,8 +58,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			if (s2[i] == '\0')
 				break;
 			nptr[c1 + i] = s2[i];
+
 		}
 	}
-	nptr[c1 + n + 1] = '\0';
+
+	nptr[c1 + c2 + 1] = '\0';
+
 	return (nptr);
 }
