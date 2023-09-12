@@ -1,3 +1,4 @@
+#ifndef TASK0
 #define TASK0
 
 /**
