@@ -28,6 +28,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		}
 
 		printf("%d", va_arg(tots, int));
+		va_end(tots);
 	}
 
 	printf("\n");
