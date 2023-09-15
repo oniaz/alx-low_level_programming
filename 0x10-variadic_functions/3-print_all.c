@@ -38,6 +38,9 @@ void print_all(const char *const format, ...)
 						t = "(nil)";
 					printf("%s%s", seppy, t);
 					break;
+				default:
+					i++;
+					continue;
 			}
 			i++, seppy = ", ";
 		}
