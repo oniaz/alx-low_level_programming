@@ -11,39 +11,38 @@ void print_all(const char *const format, ...)
 	unsigned long int suzi = 0, i = 0;
 	char *seppy = "", *t;
 
-	while (format[i] != '\0')
+	if (format)
 	{
-		suzi++;
-		i++;
-	}
-	i = 0;
-	va_start(liz, format);
-	while (i < suzi)
-	{
-		switch (format[i])
+		while (format[i] != '\0')
+			suzi++, i++;
+		i = 0;
+		va_start(liz, format);
+		while (i < suzi)
 		{
-			case 'c':
-				printf("%s%c", seppy, va_arg(liz, int));
-				break;
+			switch (format[i])
+			{
+				case 'c':
+					printf("%s%c", seppy, va_arg(liz, int));
+					break;
 
-			case 'i':
-				printf("%s%d", seppy, va_arg(liz, int));
-				break;
+				case 'i':
+					printf("%s%d", seppy, va_arg(liz, int));
+					break;
 
-			case 'f':
-				printf("%s%f", seppy, va_arg(liz, double));
-				break;
+				case 'f':
+					printf("%s%f", seppy, va_arg(liz, double));
+					break;
 
-			case 's':
-				t = va_arg(liz, char *);
-				if (!t)
-					t = "(nil)";
-				printf("%s%s", seppy, t);
-				break;
+				case 's':
+					t = va_arg(liz, char *);
+					if (!t)
+						t = "(nil)";
+					printf("%s%s", seppy, t);
+					break;
+			}
+			i++, seppy = ", ";
 		}
-		i++;
-		seppy = ", ";
+		va_end(liz);
+		printf("\n");
 	}
-	va_end(liz);
-	printf("\n");
 }
