@@ -24,21 +24,21 @@ void print_all(const char *const format, ...)
 				case 'c':
 					printf("%s%c", seppy, va_arg(liz, int));
 					break;
-
 				case 'i':
 					printf("%s%d", seppy, va_arg(liz, int));
 					break;
-
 				case 'f':
 					printf("%s%f", seppy, va_arg(liz, double));
 					break;
-
 				case 's':
 					t = va_arg(liz, char *);
 					if (!t)
 						t = "(nil)";
 					printf("%s%s", seppy, t);
 					break;
+				default:
+					i++;
+					continue;
 			}
 			i++, seppy = ", ";
 		}
