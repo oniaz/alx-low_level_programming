@@ -11,6 +11,11 @@ int pop_listint(listint_t **head)
 	int n;
 	listint_t *removednode = (*head);
 
+	if (!head)
+		return (0);
+	if (!*(head))
+		return (0);
+
 	*head = removednode->next;
 	n = removednode->n;
 	free(removednode);
