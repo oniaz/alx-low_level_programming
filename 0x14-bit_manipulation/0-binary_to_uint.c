@@ -27,10 +27,6 @@ unsigned long int _strlen(const char *s)
  */
 unsigned int _pow(unsigned int x, unsigned int y)
 {
-	if (y < 0)
-
-		return (-1);
-
 	if (y == 0)
 		return (1);
 
