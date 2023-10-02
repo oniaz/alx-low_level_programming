@@ -42,10 +42,11 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 
 	written = write(fd, text_content, _strlen(text_content));
-	
+
 	close(fd);
-	
-	if (written != _strlen(text_content))
+
+	if (written == -1)
 		return (-1);
+
 	return (1);
 }
