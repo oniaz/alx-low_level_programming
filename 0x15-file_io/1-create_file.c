@@ -31,7 +31,7 @@ unsigned long int _strlen(char *s)
 int create_file(const char *filename, char *text_content)
 {
 	int fd;
-	ssize_t written;
+	ssize_t written = 0;
 
 	if (!filename)
 		return (-1);
@@ -40,8 +40,8 @@ int create_file(const char *filename, char *text_content)
 
 	if (fd == -1)
 		return (-1);
-
-	written = write(fd, text_content, _strlen(text_content));
+	if (text_content)
+		written = write(fd, text_content, _strlen(text_content));
 
 	close(fd);
 
