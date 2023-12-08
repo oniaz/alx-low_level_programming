@@ -21,7 +21,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (!strcmp(key, (const char *)ptr->key))
 		{
-			ptr->value = malloc(strlen(value + 1));
+			free(ptr->value);
+			ptr->value = malloc(strlen(value) + 1);
 			if (!ptr->value)
 				return (0);
 			strcpy(ptr->value, value);
