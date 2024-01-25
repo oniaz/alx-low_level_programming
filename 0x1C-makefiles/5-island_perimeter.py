@@ -27,26 +27,31 @@ def island_perimeter(grid):
         return 0
 
     cols = len(grid[0])
+    if cols == 0:
+        return 0
+
     perimeter = 0
     all_water = True
 
     for r in range(rows):
         water = 0
         for c in range(cols):
+            if len(grid[r]) == 0:
+                break
             if grid[r][c] == 0:  # 0; water
                 water += 1
             else:  # 1; land
                 if all_water:
                     all_water = False
                 perimeter += 4
-                # if r > 0:
                 # not necessary since the island must be surrounded by water
-                if grid[r-1][c] == 1:  # land above
-                    perimeter -= 2
-                # if c > 0:
+                if r > 0:
+                    if grid[r-1][c] == 1:  # land above
+                        perimeter -= 2
                 # not necessary since the island must be surrounded by water
-                if grid[r][c-1] == 1:  # land to the left
-                    perimeter -= 2
+                if c > 0:
+                    if grid[r][c-1] == 1:  # land to the left
+                        perimeter -= 2
         if water == cols and not all_water:
             return perimeter
     return perimeter
